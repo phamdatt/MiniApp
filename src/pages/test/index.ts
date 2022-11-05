@@ -1,9 +1,36 @@
+import { getPost } from "../../services/index";
+
 Page({
   data: {
-    title: 'Tiki',
-    array: [{ user: 'Alex' }, { user: 'Lucy' }]
+    isLoading: true,
+    productList:[]
   },
-  handleTap() {
-    console.log('yo! view tap!');
+    // @ts-ignore ==> test ts ignore flag
+  async loadData(){
+    this.setData({
+      isLoading: true,
+    });
+    try {
+      const [
+        productList
+      ] = await Promise.all([
+       getPost()
+      ]);
+
+      this.setData({
+         // @ts-ignore ==> test ts ignore flag
+        productList,
+        isLoading: false,
+      });
+    } catch {
+      this.setData({
+        isLoading: false,
+      });
+    }
+  },
+  // Life cycle
+  async onReady() {
+      // @ts-ignore ==> test ts ignore flag
+    this.loadData();
   }
 });
