@@ -3,12 +3,13 @@ interface PropsRequestMockApiInterface {
   data:any
 }
 
-export const requestMockApi = (props:PropsRequestMockApiInterface):Promise<any> =>{
+export const requestMockApi = (props:PropsRequestMockApiInterface) =>{
   const {time,data} = props;
 
   return new Promise((resolve) =>{
+    // @ts-ignore
     setTimeout(() =>{
-      resolve(data)
+      resolve(data);
     },time);
   })
 }

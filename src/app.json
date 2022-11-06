@@ -1,9 +1,21 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/test/index"
+    "pages/HomeScreen/index",
+    "pages/CategoryMenuScreen/index"
   ],
   "window": {
     "defaultTitle": "My App"
+  },
+  "tabBar": {
+    "items": [
+      {
+        "name": "Home",
+        "pagePath": "pages/HomeScreen/index"
+      },
+      {
+        "name": "Menu",
+        "pagePath": "pages/CategoryMenuScreen/index"
+      }
+    ]
   }
 }

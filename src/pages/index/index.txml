@@ -1,6 +1,0 @@
-<view>This is blank page</view>
-<view>this.data.value {{value}}</view>
-<navigator open-type="redirect" url="pages/test/index">
-  Redirect to modal page
-</navigator>
-<component-test/>
