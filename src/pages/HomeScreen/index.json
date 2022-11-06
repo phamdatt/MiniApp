@@ -1,4 +1,8 @@
 {
-  "defaultTitle": "HomeScreen",
-  "disableHardwareBack":"NO"
+  "defaultTitle": "",
+  "titleBarBottomColor": "#fff",
+  "allowsBounceVertical": "NO",
+  "usingComponents": {
+    "banners": "component/banners/index"
+  }
 }

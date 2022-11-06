@@ -1,9 +1,10 @@
-import { getPost } from "../../services/index";
+import { getPost,getBannersAPI } from "../../services/index";
 
 Page({
   data: {
     isLoading: true,
-    productList:[]
+    productList:[],
+    banners: [],
   },
     // @ts-ignore ==> test ts ignore flag
   async loadData(){
@@ -12,14 +13,18 @@ Page({
     });
     try {
       const [
-        productList
+        productList,
+        banners
       ] = await Promise.all([
-       getPost()
+       getPost(),
+       getBannersAPI()
       ]);
 
       this.setData({
          // @ts-ignore ==> test ts ignore flag
         productList,
+         // @ts-ignore ==> test ts ignore flag
+        banners,
         isLoading: false,
       });
     } catch {

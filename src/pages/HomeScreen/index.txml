@@ -1,5 +1,13 @@
-<view>
- <block
+ <view tiki:if="{{isLoading}}" class="home-init">
+  <view class="loading"></view>
+</view>
+<view tiki:else>
+      <banners
+        class="home-banners"
+        isLoading="{{isLoading}}"
+        banners="{{banners}}"
+        />
+      <block
         tiki:for="{{productList}}"
         tiki:key="id"
       >
